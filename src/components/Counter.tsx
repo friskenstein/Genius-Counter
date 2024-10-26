@@ -7,7 +7,7 @@ const Counter: React.FC = () => {
 		<div>
 			<p>Count: {count}</p>
 			<button onClick={() => setCount(count + 1)}>Increment</button>
-			<button onClick={() => setCount(count + -1)}>Decrement</button>
+			<button onClick={() => setCount(count - 1)} disabled={count === 0}>Decrement</button>
 		</div>
 	)
 }

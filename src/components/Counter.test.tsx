@@ -23,4 +23,10 @@ describe('Counter Component', () => {
 		const countElement = screen.getByText(/count: 0/i)
 		expect(countElement).toBeInTheDocument()
 	})
+
+	test('disables decrement button when count is zero', () => {
+		render(<Counter />)
+		const decrementButton = screen.getByRole('button', { name: /decrement/i })
+		expect(decrementButton).toBeDisabled()
+	})
 })
